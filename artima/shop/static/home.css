@@ -36,6 +36,7 @@ body {
     margin-right: 20vw;
 }
 
+
 .button {
     border-style: solid;
     border-width: 1px;
@@ -51,6 +52,10 @@ body {
     display: flex;
     margin-right: 5vw;
     height: fit-content;
+}
+
+.button:first-child {
+    margin-left: 10px;
 }
 
 .button-lupa {
