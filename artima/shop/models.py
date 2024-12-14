@@ -40,6 +40,8 @@ class Product(models.Model):
     description = models.TextField(blank = True,)
     # цена
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
+    # наличие
+    avialable = models.BooleanField(default=True)
     # дата добавления продукта
     created = models.DateTimeField(auto_now_add = True)
 
@@ -113,5 +115,16 @@ class OrdinaryProfile(models.Model):
 
 class Bag (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+
+class Commentary(models.Model):
+    profile = models.ForeignKey(AdvancedProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(OrdinaryProfile, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('user',)
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
 
 
