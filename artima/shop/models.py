@@ -115,3 +115,13 @@ class Bag (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
+class Commentary(models.Model):
+    profile = models.ForeignKey(AdvancedProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(OrdinaryProfile, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('user',)
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
+
