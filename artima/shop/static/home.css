@@ -8,27 +8,71 @@ body {
     font-family: 'Michroma', sans-serif;
     }
 
-
 .container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    height: 265;
-    width: 1100;
-  }
+    position: fixed;
+}
 
+.header {
+    display: flex;
+    width: 1000px;
+    margin: 0px;
+}
+
+.metka {
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    margin-right: 20vw;
+}
+
+.button {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    background: none;
+    text-align: center;
+    padding: 0;
+}
+
+.button-text {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    margin: 3px;
+}
 .topic {
     margin: auto;
+    height: 160px;
+    width: 800px;
 }
 
 .title-left {
    color: aliceblue;
    font-weight: 400;
-   font-size: 85px;
+   font-size: 65px;
    text-align: left;
+   margin: 0px;
 }
 
 .title-right {
     color: aliceblue;
     font-weight: 400;
-    font-size: 96px;
+    font-size: 45px;
     text-align: right;
+    margin: 0px;
  }
