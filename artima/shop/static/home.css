@@ -1,0 +1,34 @@
+body {background-image: url("images/main.jpeg")}
+
+body {background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;}
+
+body {
+    font-family: 'Michroma', sans-serif;
+    }
+
+
+.container {
+    display: flex;
+    height: 265;
+    width: 1100;
+  }
+
+.topic {
+    margin: auto;
+}
+
+.title-left {
+   color: aliceblue;
+   font-weight: 400;
+   font-size: 85px;
+   text-align: left;
+}
+
+.title-right {
+    color: aliceblue;
+    font-weight: 400;
+    font-size: 96px;
+    text-align: right;
+ }
