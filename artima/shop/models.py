@@ -40,6 +40,8 @@ class Product(models.Model):
     description = models.TextField(blank = True,)
     # цена
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
+    # наличие
+    avialable = models.BooleanField(default=True)
     # дата добавления продукта
     created = models.DateTimeField(auto_now_add = True)
 
@@ -123,5 +125,6 @@ class Commentary(models.Model):
         ordering = ('user',)
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
 
 
