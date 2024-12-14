@@ -7,3 +7,31 @@ body {background-position: center center;
 body {
     font-family: 'Michroma', sans-serif;
     }
+
+.escape {
+    height:43px;
+    width:auto;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    box-sizing: border-box;
+}
+
+
+.escape-text {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: center;
+} 
