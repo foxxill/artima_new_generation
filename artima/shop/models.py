@@ -61,25 +61,25 @@ class Product(models.Model):
         return tags
     
 
-class AdvancedProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
-    # фио
-    name = models.CharField(max_length = 30, default='')
-    surname = models.CharField(max_length = 30, default='')
-    secondname = models.CharField(max_length = 30, default='')
-    # телефон
-    number = models.IntegerField(blank=True, null=True)
-    # адресс
-    country = models.CharField(max_length = 30, default='')
-    city = models.CharField(max_length = 30, default='')
-    address = models.CharField(max_length = 100, db_index = True, default='')
-    # о себе
+# class AdvancedProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
+#     # фио
+#     name = models.CharField(max_length = 30, default='')
+#     # surname = models.CharField(max_length = 30, default='')
+#     secondname = models.CharField(max_length = 30, default='')
+#     # телефон
+#     number = models.IntegerField(blank=True, null=True)
+#     # адресс
+#     country = models.CharField(max_length = 30, default='')
+#     city = models.CharField(max_length = 30, default='')
+#     address = models.CharField(max_length = 100, db_index = True, default='')
+#     # о себе
     
 
     
-    class Meta:
-        ordering = ('name_surname',)
+#     class Meta:
+#         ordering = ('name_surname',)
     
-    def __str__(self):
-        return f'{self.user.username} Profile'
+#     def __str__(self):
+#         return f'{self.user.username} Profile'
