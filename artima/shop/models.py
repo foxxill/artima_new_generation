@@ -28,7 +28,12 @@ class Product(models.Model):
     # фото
     image = models.ImageField(upload_to=f'images/products/%Y/%m/%d', default = 'images/default/product.jpg', blank = True)
     # размер
-    # size = 
+    hight = models.IntegerField(blank=True, null=True)
+    width = models.IntegerField(blank=True, null=True)
+    # цвет
+    color = models.CharField(blank=True, null=True)
+    # тематика
+    theme = models.CharField(blank=True, null=True)
     # описание
     description = models.TextField(blank = True,)
     # цена
@@ -53,3 +58,4 @@ class Product(models.Model):
             if word[0] == '#':
                 tags.append(word)
         return tags
+    
