@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -18,6 +19,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Product(models.Model):
     """модель для товаров"""
     category = models.ForeignKey(Category, related_name = 'product', on_delete = models.CASCADE)
@@ -30,18 +32,17 @@ class Product(models.Model):
     # размер
     hight = models.IntegerField(blank=True, null=True)
     width = models.IntegerField(blank=True, null=True)
-    # цвет
-    color = models.CharField(blank=True, null=True)
-    # тематика
-    theme = models.CharField(blank=True, null=True)
-    # описание
+    # # цвет
+    # color = models.CharField(blank=True, null=True)
+    # # тематика
+    # theme = models.CharField(blank=True, null=True)
+    # # описание
     description = models.TextField(blank = True,)
     # цена
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
     # дата добавления продукта
     created = models.DateTimeField(auto_now_add = True)
 
-    
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
@@ -56,6 +57,29 @@ class Product(models.Model):
         tags = []
         for word in self.description.split(' '):
             if word[0] == '#':
-                tags.append(word)
+                tags.append(word[1::])
         return tags
     
+
+class AdvancedProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
+    # фио
+    name = models.CharField(max_length = 30, default='')
+    surname = models.CharField(max_length = 30, default='')
+    secondname = models.CharField(max_length = 30, default='')
+    # телефон
+    number = models.IntegerField(blank=True, null=True)
+    # адресс
+    country = models.CharField(max_length = 30, default='')
+    city = models.CharField(max_length = 30, default='')
+    address = models.CharField(max_length = 100, db_index = True, default='')
+    # о себе
+    
+
+    
+    class Meta:
+        ordering = ('name_surname',)
+    
+    def __str__(self):
+        return f'{self.user.username} Profile'
