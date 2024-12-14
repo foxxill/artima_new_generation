@@ -32,11 +32,11 @@ class Product(models.Model):
     # размер
     hight = models.IntegerField(blank=True, null=True)
     width = models.IntegerField(blank=True, null=True)
-    # # цвет
-    # color = models.CharField(blank=True, null=True)
-    # # тематика
-    # theme = models.CharField(blank=True, null=True)
-    # # описание
+    # цвет
+    color = models.CharField(max_length = 500, blank=True, null=True)
+    # тематика
+    theme = models.CharField(max_length = 500, blank=True, null=True)
+    # описание
     description = models.TextField(blank = True,)
     # цена
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
@@ -63,6 +63,7 @@ class Product(models.Model):
 
 class AdvancedProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
     # фио
     name = models.CharField(max_length = 30, default='')
@@ -73,13 +74,38 @@ class AdvancedProfile(models.Model):
     # адресс
     country = models.CharField(max_length = 30, default='')
     city = models.CharField(max_length = 30, default='')
-    address = models.CharField(max_length = 100, db_index = True, default='')
+    address = models.CharField(max_length = 200, db_index = True, default='')
     # о себе
-    
+    about = models.TextField(blank = True)
 
     
     class Meta:
-        ordering = ('name_surname',)
+        ordering = ('name',)
+    
+    def __str__(self):
+        return f'{self.user.username} Profile'
+    
+
+class OrdinaryProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
+    # фио
+    name = models.CharField(max_length = 30, default='')
+    surname = models.CharField(max_length = 30, default='')
+    secondname = models.CharField(max_length = 30, default='')
+    # телефон
+    number = models.IntegerField(blank=True, null=True)
+    # адресс
+    country = models.CharField(max_length = 30, default='')
+    city = models.CharField(max_length = 30, default='')
+    address = models.CharField(max_length = 200, db_index = True, default='')
+    # о себе
+    about = models.TextField(blank = True)
+
+    
+    class Meta:
+        ordering = ('name',)
     
     def __str__(self):
         return f'{self.user.username} Profile'
