@@ -57,7 +57,7 @@ class Product(models.Model):
         tags = []
         for word in self.description.split(' '):
             if word[0] == '#':
-                tags.append(word[1::])
+                if word[1::] != '': tags.append(word[1::])
         return tags
     
 
@@ -81,6 +81,8 @@ class AdvancedProfile(models.Model):
     
     class Meta:
         ordering = ('name',)
+        verbose_name = 'Продавец'
+        verbose_name_plural = 'Продавцы'
     
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -89,7 +91,6 @@ class AdvancedProfile(models.Model):
 class OrdinaryProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    photo = models.ImageField(upload_to='images/profile', default='images/default/profile.jpg')
     # фио
     name = models.CharField(max_length = 30, default='')
     surname = models.CharField(max_length = 30, default='')
@@ -100,12 +101,17 @@ class OrdinaryProfile(models.Model):
     country = models.CharField(max_length = 30, default='')
     city = models.CharField(max_length = 30, default='')
     address = models.CharField(max_length = 200, db_index = True, default='')
-    # о себе
-    about = models.TextField(blank = True)
 
-    
     class Meta:
         ordering = ('name',)
+        verbose_name = 'Покупатель'
+        verbose_name_plural = 'Покупатели'
     
     def __str__(self):
         return f'{self.user.username} Profile'
+    
+
+class Bag (models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+
