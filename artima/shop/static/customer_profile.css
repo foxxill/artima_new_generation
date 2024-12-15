@@ -101,11 +101,13 @@ body {
     text-align: left;
    }
 
-   .criterii {
+   .criterii label{
+    display:block;
+  }
+
+  .label {
+    font-size: 20px;
+    font-weight: 400;
     color: white;
-    font-size: 40px;
-    font-weight: 100;
-    line-height: 51px;
-    letter-spacing: 0px;
-    text-align: left;
-   }
+    
+  }
