@@ -52,6 +52,7 @@ body {
     display: flex;
     margin-right: 5vw;
     height: fit-content;
+    margin-left: 0;
 }
 
 .button:first-child {
@@ -152,13 +153,23 @@ input {
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
-    background: none;
+    width: fit-content;
+    height: 30px;
 }
+
+.dropdown-content-position {
+    display: flex;
+    position: absolute;
+    margin-top: 15px;
+
+}
+
 
 .category {
     border: none;

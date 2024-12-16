@@ -9,25 +9,28 @@
 
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="{% static 'js/categories.js' %}"></script>
 </head>
 <body>
-    <script src="../static/categories.js"></script>
+    
     <div class="header">
         <div class="metka">
             <p class="button-text">ARTIMA Нижний Новгород</p>
         </div>
         <div class="dropdown">
-            <button class="button" onclick="myFunction()">
+            <button class="button" id="categoriesButton">
                 <p class="button-text">категории</p>
             </button>
-            <div id="myDropdown" class="dropdown-content">
-                <button class="category">картины</button>
-                <button class="category">скульптуры</button>
-                <button class="category">украшения</button>
-                <button class="category">аксессуары</button>
-                <button class="category">одежда</button>
-                <button class="category">другое</button>
-              </div>
+            <div id="categoriesPanel" class="dropdown-content">
+                <div class="dropdown-content-position">
+                    <button class="category">картины</button>
+                    <button class="category">скульптуры</button>
+                    <button class="category">украшения</button>
+                    <button class="category">аксессуары</button>
+                    <button class="category">одежда</button>
+                    <button class="category">другое</button>
+                </div>
+            </div>
         </div>
 
         <button class="button">
