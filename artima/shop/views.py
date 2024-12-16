@@ -11,5 +11,5 @@ def profile(request):
 def testing(request):
     return render(request, 'testing_back.html', context={})
 
-def testing(request):
+def category_test(request):
     return render(request, 'category.html', context={})
