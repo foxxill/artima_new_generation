@@ -38,14 +38,15 @@ body {
 }
 
 .description-text {
-    width: 55vh;
-    margin-right: 10vw;
+    width: 60vh;
+    margin-right: 7vw;
+    text-align: justify;
 }
 
 .description-text p {
     color: rgb(255, 255, 255);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 
@@ -54,6 +55,7 @@ body {
     font-weight: 400;
     font-size: 25px;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 .logo {
