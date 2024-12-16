@@ -23,7 +23,9 @@
             </button>
             <div id="categoriesPanel" class="dropdown-content">
                 <div class="dropdown-content-position">
-                    <button class="category">картины</button>
+                    <button class="category" onclick="window.location.href = '{% url 'shop:cat' %}';">
+                        картины
+                    </button>
                     <button class="category">скульптуры</button>
                     <button class="category">украшения</button>
                     <button class="category">аксессуары</button>
