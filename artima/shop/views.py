@@ -3,7 +3,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'home.html', context={})
+    template = 'home.html'
+    
+    context = {}
+    return render(request, template, context)
 
 def profile(request):
     return render(request, 'customer_profile.html', context={})
