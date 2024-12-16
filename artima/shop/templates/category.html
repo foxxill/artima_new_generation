@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category page</title>
+
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="{% static 'js/categories.js' %}"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="header">
+            <button class="button1">
+                <p class="button-text">вернуться</p>
+            </button>
+            <div class="dropdown">
+                <button class="button" id="categoriesButton">
+                    <p class="button-text">категории</p>
+                </button>
+                <div id="categoriesPanel" class="dropdown-content">
+                    <div class="dropdown-content-position">
+                        <button class="category">картины</button>
+                        <button class="category">скульптуры</button>
+                        <button class="category">украшения</button>
+                        <button class="category">аксессуары</button>
+                        <button class="category">одежда</button>
+                        <button class="category">другое</button>
+                    </div>
+                </div>
+            </div>
+            <button class="button">
+                <p class="button-text">поиск по параметрам</p>
+            </button>
+
+            <form action="" method="get" class="form-search">
+                <button class="lupa" type="submit"></button>
+                <input type="search">
+            </form>
+
+            <button class="button">
+                <p class="button-text">корзина</p>
+            </button>
+
+            <button class="button">
+                <p class="button-text">профиль</p>
+            </button>
+        </div>
+
+        <div class="description">
+            <div class="description-text">
+                <h1>Название категории</h1>
+                <p>Снова какое-то шедевроописание, вот
+                    чтоб прям захотелось купить все и сразу. 
+                    Отдайте нам ваши деньги порадуйте душу. 
+                    Будем очень счастливы. Снова какое-то шедевроописание, 
+                    вот чтоб прям захотелось купить все и сразу. 
+                    Отдайте нам ваши деньги порадуйте душу. 
+                    Будем очень счастливы.</p>
+            </div>
+            <div class="logo">
+                <p>ARTIMA</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="button">
+            <p class="button-text">контакты</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">мы в социальных сетях</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">о проекте</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">рекламодателям</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">доставка и оплата</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">сотрудничество с художниками</p>
+        </button>
+
+        <button class="button">
+            <p class="button-text">стать продавцом</p>
+        </button>
+    </div>
+</body>
+</html>
