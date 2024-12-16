@@ -1,4 +1,4 @@
-body {background-image: url("images/main.jpeg")}
+body {background-image: url("../images/main.jpeg")}
 
 body {background-position: center center;
     background-attachment: fixed;
@@ -82,7 +82,7 @@ body {
 }
 
 .lupa {
-    background-image: url("images/лупазалупа.svg");
+    background-image: url("../images/лупазалупа.svg");
     background-size: cover;
     width: 15px;
     height: 15px;
@@ -147,4 +147,29 @@ input {
     width: 100%;
     height: 60px;
     display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: none;
+}
+
+.category {
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 0;
+    margin-right: 20px;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 14px;
+    margin-right: 1vw;
+    display: block;
 }
