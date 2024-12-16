@@ -7,3 +7,9 @@ def home(request):
 
 def profile(request):
     return render(request, 'customer_profile.html', context={})
+
+def testing(request):
+    return render(request, 'testing_back.html', context={})
+
+def testing(request):
+    return render(request, 'category.html', context={})

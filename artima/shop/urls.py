@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 app_name = 'shop'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('cat/', views.category_test, name='cat'),
     # path('category&<str:category_slug>/', views.category, name = 'category'),
     path('profile/', views.profile, name = 'profile'),
     # path('register/', views.register, name = 'register'),
@@ -15,5 +16,6 @@ urlpatterns = [
     # path('profile/addproduct/', views.add_product, name='add_product'),
     # path('<str:user>&author', views.profile_pub, name = 'profile_pub'),
     # path('search/', views.search, name = 'search'),
+    path('t/', views.testing, name='t')
 ]
 
