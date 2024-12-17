@@ -36,7 +36,8 @@ body {
     text-align: center;
 } 
 .zakaziki {
-    margin-left: 100px;
+    margin-left: 80px;
+    
 }
 
 .zakazy {
@@ -57,10 +58,86 @@ body {
     text-align: left;
     }
 
-.na_glavnuyu{
-    margin-left: 100px; /*mlkeeflkerjglekr*/
+   .ld {
+    margin-left: 80px;
+   }
+   
+   .ld-text {
+    color: white;
+    font-size: 50px;
+    font-weight: 350;
+    line-height: 51px;
+    letter-spacing: 0px;
+    text-align: left;
+   }
+
+   .criterii label{
+    display:block;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .save1 {
     border-radius: 7px;
-    background: rgb(247, 118, 21);
+    background:rgb(247, 118, 21);
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-right: auto;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    }
+
+
+ .save2 {
+    border-radius: 7px;
+    background:rgb(247, 118, 21);
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-right: auto;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    }
+    
+.save-text {
+     color: white;
+     font-size: 25px;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: 0px;
+     text-align: center;
+     cursor: pointer;
+     margin-top: 7px;
+     margin-bottom: 7px;
+     margin-left: 25px;
+     margin-right: 25px;
+    }
+    .save1:hover {
+    background: #CA0A69;
+   }
+
+   .save2:hover {
+    background: #CA0A69;
+   }
+
+   .na_glavnuyu {
+    margin-left: 80px; /*mlkeeflkerjglekr*/
+    border-radius: 7px;
+    background:rgb(247, 118, 21);
     padding-top: auto;
     padding-bottom: auto;
     padding-left: auto;
@@ -71,8 +148,8 @@ body {
     border-right: none;
     }
 
-.na_glavnuyu-text{
-     color: rgb(247, 118, 21);
+.na_glavnuyu-text {
+     color: white;
      font-size: 25px;
      font-weight: 400;
      line-height: normal;
@@ -88,50 +165,63 @@ body {
     background: #CA0A69;
    }
 
-   .ld {
-    margin-left: 100px;
-   }
-   
-   .ld-text {
-    color: white;
-    font-size: 50px;
-    font-weight: 350;
-    line-height: 51px;
-    letter-spacing: 0px;
-    text-align: left;
-   }
-
-   .criterii label{
-    display:block;
-  }
-
-  .save {
-    margin-left: 100px; /*mlkeeflkerjglekr*/
-    border-radius: 7px;
-    background:rgb(247, 118, 21);
-    padding-top: auto;
-    padding-bottom: auto;
-    padding-left: auto;
-    padding-right: auto;
-    border-bottom: none;
+   input {
+    background: transparent;
+    border-bottom-color: white;
     border-top: none;
     border-left: none;
     border-right: none;
-    }
+    border-width: 1px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+  }
 
-.save-text {
-     color: white;
-     font-size: 25px;
-     font-weight: 400;
-     line-height: normal;
-     letter-spacing: 0px;
-     text-align: center;
-     cursor: pointer;
-     margin-top: 7px;
-     margin-bottom: 7px;
-     margin-left: 25px;
-     margin-right: 25px;
-    }
-    .save:hover {
-    background: #CA0A69;
+  input, select, textarea{
+    color: white;
+    outline: none;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.placeholder {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.footer {
+    background-color: transparent;
+     right: 0;
+     bottom: 0;
+     text-align: center; 
+     width: 99%;   
+     font-size: 19px;
+    color: #fafaff;  
    }
+
+   .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button-text{
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.artima{
+    color: rgb(255, 255, 255);
+    font-family: Michroma;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: right;
+}
