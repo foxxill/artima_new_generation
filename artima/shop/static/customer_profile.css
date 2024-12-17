@@ -104,3 +104,33 @@ body {
     .save:hover {
     background: #CA0A69;
    }
+   .na_glavnuyu{
+    margin-left: 100px; /*mlkeeflkerjglekr*/
+    border-radius: 7px;
+    background: rgb(247, 118, 21);
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-right: auto;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    }
+
+.na_glavnuyu-text{
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 25px;
+    margin-right: 25px;
+    }
+    .na_glavnuyu:hover {
+    background: #CA0A69;
+   }
