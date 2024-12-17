@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         categoriesPanel.classList.toggle('dropdown-content');
     });
 
-    document.addEventListener('click', () => {
-        if (!categoriesPanel.classList.contains('dropdown-content')) {
+    document.addEventListener('click', (event) => {
+        if (!categoriesPanel.contains(event.target) && event.target !== categoriesButton) {
             categoriesPanel.classList.add('dropdown-content');
         }
     });
