@@ -24,7 +24,7 @@ body {
     padding-left: 1px;
     padding-right: 1px;
     box-sizing: border-box;
-    margin-left: 20px;
+    margin-left: 1.7%;
 }
 
 .escape-text {
@@ -43,7 +43,7 @@ body {
 .zakazy {
     color: white;
     font-size: 50px;
-    font-weight: 350;
+    font-weight: 400;
     line-height: 51px;
     letter-spacing: 0px;
     text-align: left;
@@ -138,14 +138,8 @@ body {
     margin-left: 80px; /*mlkeeflkerjglekr*/
     border-radius: 7px;
     background:rgb(247, 118, 21);
-    padding-top: auto;
-    padding-bottom: auto;
-    padding-left: auto;
-    padding-right: auto;
-    border-bottom: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    padding: auto;
+    border: none;
     }
 
 .na_glavnuyu-text {
@@ -199,7 +193,7 @@ body {
      text-align: center; 
      width: 99%;   
      font-size: 19px;
-    color: #fafaff;  
+     color: #fafaff;  
    }
 
    .button {
