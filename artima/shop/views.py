@@ -1,11 +1,29 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import *
 
 
 def home(request):
+    """главная"""
     template = 'home.html'
-    
-    context = {}
+
+    categories = Category.objects.order_by('id')
+
+    context = {
+        'categories' : categories
+        }
+    return render(request, template, context)
+
+def category(request, pk):
+    """вывод категорий на странице"""
+    template = 'category.html'
+
+    category = Category.objects.get(slug = pk)
+    products = Product.objects.filter(category = category)
+
+    context = {
+        'products' : products
+    }
     return render(request, template, context)
 
 def profile(request):
