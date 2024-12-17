@@ -20,30 +20,53 @@ class Category(models.Model):
     def __str__(self):
         return self.name    
     
+# параметры
+class Color(models.Model):
+    """цвет"""
+    value = models.CharField(max_length=255)
 
+    class Meta:
+        ordering = ('value',)
+        verbose_name = 'Цвет'
+        verbose_name_plural = 'Цвета'
+
+    def __str__(self):
+        return self.value
+
+class Theme(models.Model):
+    """тема"""
+    value = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('value',)
+        verbose_name = 'Тема'
+        verbose_name_plural = 'Темы'
+
+    def __str__(self):
+        return self.value
 
 class Product(models.Model):
     """модель для товаров"""
     category = models.ForeignKey(Category, related_name = 'product', on_delete = models.CASCADE)
-    autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # имя и ссылка
     name = models.CharField(max_length = 150, db_index = True)
-    slug = models.SlugField(max_length = 250, db_index = True, unique = True)
+    # slug = models.SlugField(max_length = 250, db_index = True, unique = True)
     # фото
-    image = models.ImageField(upload_to=f'images/products/%Y/%m/%d', default = 'images/default/product.jpg', blank = True)
+    image = models.ImageField(upload_to=f'images/products/%Y/%m/%d', default = None, blank = True) # default = 'images/default/product.jpg'
     # размер
-    hight = models.IntegerField(blank=True, null=True)
+    height = models.IntegerField(blank=True, null=True)
     width = models.IntegerField(blank=True, null=True)
     # цвет
-    color = models.CharField(max_length = 500, blank=True, null=True)
-    # тематика
-    theme = models.CharField(max_length = 500, blank=True, null=True)
+    color = models.ManyToManyField(Color, blank=True)
+    # тема
+    theme = models.ManyToManyField(Theme, blank=True)
     # описание
     description = models.TextField(blank = True,)
     # цена
-    price = models.DecimalField(max_digits = 10, decimal_places = 2)
+    price = models.DecimalField(max_digits = 10, decimal_places = 0)
     # наличие
-    avialable = models.BooleanField(default=True)
+    available = models.BooleanField(default=True)
     # дата добавления продукта
     created = models.DateTimeField(auto_now_add = True)
 
@@ -63,6 +86,10 @@ class Product(models.Model):
             if word[0] == '#':
                 if word[1::] != '': tags.append(word[1::])
         return tags
+    
+
+
+
 
 
 class AdvancedProfile(models.Model):
