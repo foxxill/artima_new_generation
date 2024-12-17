@@ -6,6 +6,34 @@ body {
     font-family: 'Michroma', sans-serif;
     }
 
+.grid-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85vw;
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: min-content;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.child {
+    height: min-content;
+    margin-bottom: 40px;
+  }
+
+.picture {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.about-product {
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+}
 .container {
     width: 100vw;
     height: 100vh;
@@ -14,12 +42,13 @@ body {
 }
 .top {
     width: 100%;
-    height: fit-content;
+    height: 450px;
     background-image: url(../images/категория1.jpeg);
-    background-attachment: fixed;
+   
     background-size: 100% auto;
     background-repeat: no-repeat;
     margin-top: 10px;
+    margin: 0;
 }
 .header {
     display: flex;
@@ -147,6 +176,22 @@ body {
     margin-bottom: 0;
 }
 
+.product-text {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.product-text-gray {
+    color: rgb(209, 209, 209);
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
 .lupa {
     background-image: url("../images/лупазалупа.svg");
     background-size: cover;
@@ -207,7 +252,7 @@ input {
  }
 
 .footer {
-    position: absolute;
+    margin-top: 15vh;
     left: 0;
     bottom: 0;
     width: 100%;
