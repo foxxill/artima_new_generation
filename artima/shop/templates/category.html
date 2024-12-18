@@ -52,14 +52,8 @@
 
         <div class="description">
             <div class="description-text">
-                <h1>Название категории</h1>
-                <p>Снова какое-то шедевроописание, вот
-                    чтоб прям захотелось купить все и сразу. 
-                    Отдайте нам ваши деньги порадуйте душу. 
-                    Будем очень счастливы. Снова какое-то шедевроописание, 
-                    вот чтоб прям захотелось купить все и сразу. 
-                    Отдайте нам ваши деньги порадуйте душу. 
-                    Будем очень счастливы.</p>
+                <h1>{{ category.title }}</h1>
+                <p>{{ category.description }}</p>
             </div>
             <div class="logo">
                 <p>ARTIMA</p>
@@ -69,6 +63,21 @@
     
     
     <div class="grid-container">
+        {% for product in products %}
+        <div class="child">
+            <img class="picture" src="{{product.image.url}}">
+            <div class="about-product">
+                <p class="product-text">{{product.name}}</p>
+                <p class="product-text">{{product.author}}</p>
+                <p class="product-text">{{product.price}} руб</p>
+                <p class="product-text-gray">Категория: {{product.get_category}}{% if product.themes %}
+                    <br>Темы: {{product.themes}} {% endif %}{% if product.colors %}
+                    <br>Цвета: {{product.colors}}{% endif %}{% if product.width %}{% if product.height %}
+                    <br>Размер: {{product.width}}/{{product.height}}{% endif %}{% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
         <div class="child">
             <img class="picture" src={% static 'images\сумкаблин.jpg' %}>
             <div class="about-product">

@@ -26,6 +26,7 @@ def category(request, pk):
     context = {
         'products' : products,
         'categories' : categories,
+        'category' : category,
 
     }
     return render(request, template, context)

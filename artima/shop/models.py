@@ -91,14 +91,16 @@ class Product(models.Model):
         cols = []
         for col in self.color.all():
             cols.append(col.value)
-        return cols
+        return ', '.join(cols)
     
     def themes(self):
         thms = []
         for thm in self.theme.all():
             thms.append(thm.value)
-        return thms
+        return ', '.join(thms)
     
+    def get_category(self):
+        return self.category.name
 
 
 
