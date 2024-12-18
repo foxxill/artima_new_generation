@@ -7,7 +7,7 @@ from .forms import *
 def home(request):
     """главная"""
     template = 'home.html'
-
+    
     categories = Category.objects.order_by('id')
 
     context = {
@@ -17,19 +17,32 @@ def home(request):
 
 def category(request, pk):
     """вывод категорий на странице"""
-    template = 'category.html'
+    template = 'products.html'
 
     categories = Category.objects.order_by('id')
-    category = Category.objects.get(slug = pk)
-    products = Product.objects.filter(category = category)
+    products = Product.objects.filter(category__slug = pk)
 
     context = {
         'products' : products,
         'categories' : categories,
-        'category' : category,
-
     }
     return render(request, template, context)
+
+
+def search(request):
+    template = 'products.html'
+
+    categories = Category.objects.order_by('id')
+
+    if request.method == 'POST':
+        products = Product.objects.filter()
+
+    context = {
+        'products' : products,
+        'categories' : categories,
+    }
+    return render(request, template, context)
+
 
 def profile(request):
     return render(request, 'customer_profile.html', context={})
