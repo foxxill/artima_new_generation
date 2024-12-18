@@ -1,1 +1,48 @@
 hello
+
+{% for i in products %}
+<p>{{i.author}}</p>
+<p>{{i.name}}</p>
+<p>{{i.category}}</p>
+<p><img src="{{ i.image.url }}"></p>
+<p>{{i.description}}</p>
+<p>{% for j in i.colors %}
+    <p>{{j}}</p>
+    {% endfor %}
+</p>
+<p>{% for j in i.themes %}
+    <p>{{j}}</p>
+    {% endfor %}
+</p>
+<p>{{i.height}}</p>
+<p>{{i.width}}</p>
+<p>{{i.price}}</p>
+<p>{{i.available}}</p>
+<p>{{i.created}}</p>
+{% endfor %}
+
+PRODUCT №__
+<!-- {% if product == True %}
+{{product.author}}
+{{product.name}}
+{{product.category}}
+<img src="{{ product.image.url }}">
+{{product.description}}
+{{product.color}}
+{{product.theme}}
+{{product.height}}
+{{product.width}}
+{{product.price}}
+{{product.available}}
+{{product.created}}
+{% endif %} -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+    <p style="color: green;">{% if sucsess == True %}
+        товар добавлен
+        {% endif %}
+    </p>
+</form>

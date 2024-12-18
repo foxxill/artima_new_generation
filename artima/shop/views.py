@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import *
+from .forms import *
 
 
 def home(request):
@@ -33,7 +34,32 @@ def profile(request):
     return render(request, 'customer_profile.html', context={})
 
 def testing(request):
-    return render(request, 'testing_back.html', context={})
+    template = 'testing_back.html'
+
+    
+    # product = Product.objects.get(id = 0)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+        return redirect('shop:t')
+    else:
+        products = Product.objects.all()
+        form = ProductForm()
+
+        context = {
+        # 'product' : product,
+        'products' : products,
+        'sucsess' : False,
+        'form' : form
+        }
+
+        return render(request, template, context)
+
+
 
 def category_test(request):
     return render(request, 'category.html', context={})

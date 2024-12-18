@@ -48,7 +48,7 @@ class Theme(models.Model):
 class Product(models.Model):
     """модель для товаров"""
     category = models.ForeignKey(Category, related_name = 'product', on_delete = models.CASCADE)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, default='ilya', on_delete=models.CASCADE)
     # имя и ссылка
     name = models.CharField(max_length = 150, db_index = True)
     # slug = models.SlugField(max_length = 250, db_index = True, unique = True)
@@ -86,6 +86,18 @@ class Product(models.Model):
             if word[0] == '#':
                 if word[1::] != '': tags.append(word[1::])
         return tags
+    
+    def colors(self):
+        cols = []
+        for col in self.color.all():
+            cols.append(col.value)
+        return cols
+    
+    def themes(self):
+        thms = []
+        for thm in self.theme.all():
+            thms.append(thm.value)
+        return thms
     
 
 
