@@ -20,11 +20,14 @@ def category(request, pk):
     template = 'products.html'
 
     categories = Category.objects.order_by('id')
-    products = Product.objects.filter(category__slug = pk)
+    category = Category.objects.get(slug = pk)
+    products = Product.objects.filter(category = category)
 
     context = {
         'products' : products,
         'categories' : categories,
+        'category' : category,
+
     }
     return render(request, template, context)
 
@@ -32,14 +35,13 @@ def category(request, pk):
 def search(request):
     template = 'products.html'
 
-    categories = Category.objects.order_by('id')
-
     if request.method == 'POST':
         products = Product.objects.filter()
 
     context = {
         'products' : products,
-        'categories' : categories,
+        'category' : category,
+
     }
     return render(request, template, context)
 
