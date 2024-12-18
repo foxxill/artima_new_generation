@@ -6,14 +6,8 @@ hello
 <p>{{i.category}}</p>
 <p><img src="{{ i.image.url }}"></p>
 <p>{{i.description}}</p>
-<p>{% for j in i.colors %}
-    <p>{{j}}</p>
-    {% endfor %}
-</p>
-<p>{% for j in i.themes %}
-    <p>{{j}}</p>
-    {% endfor %}
-</p>
+<p>{{i.colors}}</p>
+<p>{{i.themes}}</p>
 <p>{{i.height}}</p>
 <p>{{i.width}}</p>
 <p>{{i.price}}</p>
