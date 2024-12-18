@@ -15,7 +15,7 @@
     <div class="top">
         <div class="header">
             <button class="button1">
-                <p class="button-text">вернуться</p>
+                <p class="button-text" onclick="window.location.href = '{% url 'shop:home' %}';">вернуться</p>
             </button>
             <div class="dropdown">
                 <button class="button" id="categoriesButton">
@@ -23,12 +23,11 @@
                 </button>
                 <div id="categoriesPanel" class="dropdown-content">
                     <div class="dropdown-content-position">
-                        <button class="category">картины</button>
-                        <button class="category">скульптуры</button>
-                        <button class="category">украшения</button>
-                        <button class="category">аксессуары</button>
-                        <button class="category">одежда</button>
-                        <button class="category">другое</button>
+                        {% for category in categories %}
+                        <button class="category" onclick="window.location.href = '{% url 'shop:category' category.slug %}';">
+                            {{category.name}}
+                        </button>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

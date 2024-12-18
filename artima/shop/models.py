@@ -53,7 +53,7 @@ class Product(models.Model):
     name = models.CharField(max_length = 150, db_index = True)
     # slug = models.SlugField(max_length = 250, db_index = True, unique = True)
     # фото
-    image = models.ImageField(upload_to=f'images/products/%Y/%m/%d', default = None, blank = True) # default = 'images/default/product.jpg'
+    image = models.ImageField(upload_to=f'images/products/%Y/%m/%d', default = 'images/default/product.png', blank = True)
     # размер
     height = models.IntegerField(blank=True, null=True)
     width = models.IntegerField(blank=True, null=True)
