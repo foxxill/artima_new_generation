@@ -52,28 +52,32 @@ def profile(request):
 def testing(request):
     template = 'testing_back.html'
 
-    
-    # product = Product.objects.get(id = 0)
-
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()
+            sucsess = True
+    
+    else: sucsess = False
 
-        return redirect('shop:t')
-    else:
-        products = Product.objects.all()
-        form = ProductForm()
+    products = Product.objects.all()
+    form = ProductForm()
+    
+    context = {
+    'products' : products,
+    'sucsess' : sucsess,
+    'form' : form
+    }
+    return render(request, template, context)
+    
+def testing_search_by_params(request):
+    template = ''
 
-        context = {
-        # 'product' : product,
-        'products' : products,
-        'sucsess' : False,
-        'form' : form
-        }
-
-        return render(request, template, context)
+    context = {
+        
+    }
+    return render(request, template, context)
 
 
 

@@ -82,22 +82,29 @@ class Product(models.Model):
     def tags(self):
         """получение тегов из описания товара"""
         tags = []
-        for word in self.description.split(' '):
-            if word[0] == '#':
-                if word[1::] != '': tags.append(word[1::])
+        for i in range(0, len(self.description)):
+            abc = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+            des = self.description
+            if des[i] == '#':
+                word = ''
+                i+=1
+                while des[i] in abc:
+                    word += des[i]
+                    i+=1
+                if word != '': tags.append(word)
         return tags
     
     def colors(self):
-        cols = []
+        cols = ''
         for col in self.color.all():
-            cols.append(col.value)
-        return ', '.join(cols)
+            cols += col.value + ' '
+        return cols
     
     def themes(self):
-        thms = []
+        thms = ''
         for thm in self.theme.all():
-            thms.append(thm.value)
-        return ', '.join(thms)
+            thms += thm.value + ' '
+        return thms
     
     def get_category(self):
         return self.category.name

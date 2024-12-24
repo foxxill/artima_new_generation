@@ -15,28 +15,13 @@ hello
 <p>{{i.created}}</p>
 {% endfor %}
 
-PRODUCT №__
-<!-- {% if product == True %}
-{{product.author}}
-{{product.name}}
-{{product.category}}
-<img src="{{ product.image.url }}">
-{{product.description}}
-{{product.color}}
-{{product.theme}}
-{{product.height}}
-{{product.width}}
-{{product.price}}
-{{product.available}}
-{{product.created}}
-{% endif %} -->
+<h1>SEARCH PRODUCT BY PARAMS</h1>
 
+
+<h1>ADD PRODUCT</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Сохранить</button>
-    <p style="color: green;">{% if sucsess == True %}
-        товар добавлен
-        {% endif %}
-    </p>
+    {% if sucsess == True %}<p style="color: rgb(13, 188, 13);">товар добавлен</p>{% endif %}
 </form>
